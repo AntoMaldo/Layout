@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.2rem;
+  min-height: 100%;
+}
+
+.grid-container > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.header {
+  grid-area: header;
+  background-image: radial-gradient(circle, #9cf8f3, #b7f9ee, #cff9ed, #e3f9f0, #f4f9f6);
+}
+
+.navbar {
+  grid-area: navbar;
+  background-image: radial-gradient(circle, #ffe5ff, #eddcf5, #dcd4e9, #cdcadc, #c0c1ce, #bfc2cd, #bec3cb, #bfc4c9, #cbd0d3, #d7dcde, #e4e8e9, #f2f4f4);
+}
+.article {
+  grid-area: article;
+  background-image: radial-gradient(circle, #fbf4fb, #f9eefa, #f7e8f9, #f5e2f8, #f2dcf8, #ecdefb, #e5dffe, #dfe1ff, #daeaff, #daf1ff, #dff7ff, #e9fcfd);
+}
+.main {
+  grid-area: main;
+  background-color: #f5f5f5;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-image: radial-gradient(circle, #f4ecc2, #fddbbf, #f9cdc6, #e9c3ce, #d0bdd1);
+}
+
+
+.footer {
+  grid-area: footer;
+  background-image: radial-gradient(circle, #dde3e3, #c7cccd, #b1b6b7, #9ca0a1, #888b8c);
+}
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "header"  100px
+    "article" 100px
+    "main"    auto
+    "sidebar" 100px
+    "footer"  100px;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template:
+      "header  header" 100px
+      "article  article" 100px
+      "main   sidebar"   auto
+      "footer  footer" 100px /
+      auto     200px;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid-container {
+    grid-template:
+      "header  header header"  100px
+      "article  main   sidebar" auto
+      "footer  footer footer"  100px /
+      200px    auto   200px;
+  }
+}
